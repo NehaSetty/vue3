@@ -26,6 +26,14 @@
       <p v-show="true">Socks are available</p>
       <p v-if="onSale > 50 ">In stock</p>
       <p v-else>Not in stock</p>
+      <!-- list rendering for an array of objects   -->
+      <ul v-for="detail in details">{{ detail }}</ul>
+      <!-- list rendering for an objects inside an array   -->
+      <ul v-for="item in items"> ID:{{item.id}}, Color:{{ item.color}}</ul>
+      <ul>
+        sizes available are
+        <li v-for="size in sizes"> {{size}}</li>
+      </ul>
     </div>
   </div>
 
