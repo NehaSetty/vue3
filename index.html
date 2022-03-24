@@ -13,13 +13,22 @@
 
 <body>
   <div id="app">
-    <h1>{{product}}</h1>
-    <p>{{description}}</p>
-    <!-- v-bind can also be used with ":" mainly binding the image dynamically -->
-    <!-- :alt ,:href , :class ,:style, :disabled -->
-    <img v-bind:src="image"></img>
-    <a :href="url">socks can be found</a>
+    <div class="product-container">
+      <div class="product-image">
+        <!-- v-bind can also be used with ":" mainly binding the image dynamically -->
+        <!-- :alt ,:href , :class ,:style, :disabled -->
+        <img v-bind:src="image"></img>
+      </div>
+      <h1>{{product}}</h1>
+      <p>{{description}}</p>
+      <a :href="url">Find link to colors</a>
+      <!-- conditional rendering   -->
+      <p v-show="true">Socks are available</p>
+      <p v-if="onSale > 50 ">In stock</p>
+      <p v-else>Not in stock</p>
+    </div>
   </div>
+
 
   <!-- Import Js -->
   <script src="./main.js"></script>
