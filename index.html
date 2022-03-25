@@ -29,12 +29,19 @@
       <!-- list rendering for an array of objects   -->
       <ul v-for="detail in details">{{ detail }}</ul>
       <!-- list rendering for an objects inside an array   -->
-      <ul v-for="item in items"> ID:{{item.id}}, Color:{{ item.color}}</ul>
+      <ul> Colors available
+        <!-- "@mouseover2 is a hover function in vue3   -->
+        <li v-for="item in items" @mouseover="onColorHover(item.image)">{{ item.color}} </li>
+      </ul>
       <ul>
         sizes available are
         <li v-for="size in sizes"> {{size}}</li>
       </ul>
     </div>
+    <!-- eventhandling in vue   -->
+    <div class="cart">Cart :{{cart}} </div>
+    <button class="button" @click="addToCart">Add to Cart</button>
+    <button class="button" @click="deleteFromCart">Remove item</button>
   </div>
 
 

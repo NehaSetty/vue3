@@ -10,15 +10,32 @@ const app = Vue.createApp({
             details: ["80% cotton", "10% woolen", "10% others"],
             items: [{
                 id: 1,
-                color: "red"
+                color: "blue",
+                image: "./assets/images/socks_blue.jpg"
+
             },
             {
                 id: 2,
-                color: "green"
+                color: "green",
+                image: "./assets/images/socks_green.jpg"
             }
             ],
             sizes: ["S", "M", "L"],
+            cart: 0,
 
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1;
+        },
+        onColorHover(image) {
+            this.image = image;
+        },
+        deleteFromCart() {
+            if (this.cart >= 1) {
+                this.cart -= 1;
+            }
         }
     }
 })
